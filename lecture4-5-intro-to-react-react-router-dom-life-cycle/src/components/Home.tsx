@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, RouteComponentProps, withRouter } from "react-router-dom";
 interface Props {}
 interface ResponseData {
   id: number;
@@ -8,12 +9,15 @@ interface ResponseData {
 }
 interface State {
   response: ResponseData[];
+  showOtherData: boolean;
 }
-export default class Home extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
+class Home extends React.PureComponent<RouteComponentProps<Props>, State> {
+  constructor(props: RouteComponentProps<Props>) {
     super(props);
+    // console.log()
     this.state = {
       response: [],
+      showOtherData: false,
     };
   }
   getProductsData = async () => {
@@ -29,15 +33,30 @@ export default class Home extends React.PureComponent<Props, State> {
   }
   render() {
     const { response } = this.state;
-
+    // console.log("print ", response);
     if (response.length === 0) {
-      return <div className="loader">Loader........</div>;
+      return (
+        <>
+          <h1>Hello</h1>
+          <div className="loader">Loader........</div>
+        </>
+      );
     }
     return (
       <div>
+        {/* <input type="text" data-testid="input" /> */}
         <div className="product-list">
-          {response.map((resp) => (
-            <div className="product-cards">
+          {response.map((resp, index) => (
+            <div
+              className="product-cards"
+              data-test-id={index}
+              onClick={() => {
+                // this.setState({
+                //   showOtherData: true,
+                // });
+                // this.props.history.push(`products/${resp.id}`);
+              }}
+            >
               <img src={resp.image} />
               <div className="product-description">{resp.description}</div>
               <div className="product-price">{resp.price}</div>
@@ -48,3 +67,5 @@ export default class Home extends React.PureComponent<Props, State> {
     );
   }
 }
+
+export default Home;

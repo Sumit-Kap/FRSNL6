@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Test Scenario Look for loading bar in the component 1`] = `
+<div>
+  <h1>
+    Hello
+  </h1>
+  <div
+    class="loader"
+  >
+    Loader........
+  </div>
+</div>
+`;
