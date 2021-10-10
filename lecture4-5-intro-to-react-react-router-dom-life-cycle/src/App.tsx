@@ -7,6 +7,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProductDetails from "./components/ProductDetails";
+import Login from "./components/Login";
+import Register from "./components/Register";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class App extends React.Component {
   render() {
@@ -18,6 +21,8 @@ export default class App extends React.Component {
           <Route component={About} path="/about-us" exact />
           <Route component={Contact} path="/contact-us" exact />
           <Route component={ProductDetails} path="/products/:id" exact />
+          <Route component={Login} path="/sign-in" exact />
+          <Route component={Register} path="/sign-up" exact />
         </Switch>
       </React.Fragment>
     );
