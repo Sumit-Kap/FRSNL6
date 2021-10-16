@@ -1,13 +1,13 @@
+require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const dbConfig = require("./dbConfig/dbConfig");
-const dotenv = require("dotenv");
 const routes = require("./Routes/routes");
 const cors = require("cors");
 // app.use(express.json());
-dotenv.config();
-dbConfig.connect(process.env.DATABASE_URL);
+dbConfig.connect();
 app.use(bodyParser.json());
 app.use(cors());
 routes.userRoutes(app);
