@@ -12,6 +12,10 @@ app.use(bodyParser.json());
 app.use(cors());
 routes.userRoutes(app);
 
+app.use((error, req, res, next) => {
+  res.status(500).json({ message: error });
+});
+
 // app.get("/", (req, res) => {
 //   console.log("In default route");
 //   res.send("Server started successfully");

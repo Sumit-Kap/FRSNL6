@@ -76,7 +76,7 @@ const userService = {
         if (result) {
           cb(null, response);
         } else {
-          cb("user entered wrong password", null);
+          cb({ statusCode: 400, msg: "user entered wrong password" }, null);
         }
       }
     });

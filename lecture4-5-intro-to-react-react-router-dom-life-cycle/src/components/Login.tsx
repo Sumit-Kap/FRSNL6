@@ -1,11 +1,21 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import Card from "react-bootstrap/esm/Card";
-
-const Login = () => {
+import { useHistory } from "react-router-dom";
+import { withCookies } from "react-cookie";
+// import { withRouter } from "react-router-dom";
+interface Props {
+  // cookies:
+}
+interface LoginApiResponse {
+  message?: string;
+  token: string;
+}
+const Login = (props: any) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-
+  const [authResponse, setAuthResponse] = React.useState<LoginApiResponse>();
+  const history = useHistory();
   const handleChange = async () => {
     try {
       const response = await fetch(
@@ -19,6 +29,18 @@ const Login = () => {
           }),
         }
       );
+      const responseData: LoginApiResponse = await response.json();
+      if (responseData.message === "user matched") {
+        props.cookies.set("Authorization", responseData.token, {
+          path: "/",
+        });
+        history.push("/");
+        setAuthResponse(responseData);
+        // set;
+      }
+      // if (response.message === "user matched") {
+      // props.history.push("/");
+      // }
     } catch (err) {
       console.log(err);
     }
@@ -56,4 +78,5 @@ const Login = () => {
     </Card>
   );
 };
-export default Login;
+export default withCookies(Login);
+// export default withRouter(Login);
