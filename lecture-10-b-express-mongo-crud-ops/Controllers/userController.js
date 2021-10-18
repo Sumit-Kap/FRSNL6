@@ -1,5 +1,5 @@
 const userService = require("../Services/userService");
-
+const jwt = require("jsonwebtoken");
 const userController = {
   postUsers: (req, res) => {
     const {
@@ -78,9 +78,14 @@ const userController = {
     console.log(req.body);
     userService.authenticateUserService(email_id, password, (err, response) => {
       if (err) {
-        res.status(500).json({ message: err });
+        res.status(err.statusCode).json({ message: err.msg });
       } else {
-        res.status(200).json({ message: "user matched" });
+        // res.redirect("http://localhost:3000/");
+        const authToken = jwt.sign({ id: response._id }, process.env.secret, {
+          expiresIn: "20 days",
+        });
+        console.log("authToken", authToken);
+        res.status(200).json({ message: "user matched", token: authToken });
       }
     });
   },

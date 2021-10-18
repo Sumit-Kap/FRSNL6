@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
-import Card from "react-bootstrap/esm/Card";
+import Card from "react-bootstrap/Card";
 
 const Register = () => {
   const [firstName, setFirstName] = React.useState("");

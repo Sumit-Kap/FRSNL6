@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import ProductDetails from "./components/ProductDetails";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Users from "./components/Users";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class App extends React.Component {
@@ -23,6 +24,7 @@ export default class App extends React.Component {
           <Route component={ProductDetails} path="/products/:id" exact />
           <Route component={Login} path="/sign-in" exact />
           <Route component={Register} path="/sign-up" exact />
+          <Route component={Users} path="/users" exact />
         </Switch>
       </React.Fragment>
     );
