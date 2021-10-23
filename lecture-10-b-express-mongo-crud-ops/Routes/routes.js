@@ -5,7 +5,7 @@ const routes = {
     app.post("/api/v1/postUsers", userController.postUsers);
     app.get(
       "/api/v1/users",
-      util.catchAsync(util.getAuthId),
+      // util.catchAsync(util.getAuthId),
       util.catchAsync(userController.getUsers)
     );
     app.put("/api/v1/user/:id", userController.updateUserById);
