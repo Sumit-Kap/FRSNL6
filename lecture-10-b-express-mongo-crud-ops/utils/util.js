@@ -16,9 +16,8 @@ const util = {
         .json({ message: "user unauthenticated", statusCode: 401 });
     }
   },
-  catchAsync: (fn) => (req, res, next) => {
-    return fn(req, res, next).catch(next);
-  },
+  catchAsync: (fn) => (req, res, next) =>
+    Promise.resolve(fn(req, res, next)).catch(next),
 };
 
 module.exports = util;
