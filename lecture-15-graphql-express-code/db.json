@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "age": 23
+    },
+    {
+      "id": 2,
+      "firstName": "Elon",
+      "age": 24
+    },
+    {
+      "id": 3,
+      "firstName": "Warren",
+      "age": 25
+    },
+    {
+      "id": 4,
+      "firstName": "Jeff",
+      "age": 26
+    },
+    {
+      "id": 6,
+      "firstName": "Larry",
+      "age": 77
+    },
+    {
+      "id": 9,
+      "firstName": "Mark",
+      "age": 38
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
