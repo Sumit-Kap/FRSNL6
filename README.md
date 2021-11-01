@@ -15,3 +15,6 @@ Google presentation link
 React Notes - https://docs.google.com/presentation/d/1iZ867mP4S_CJj1Xqmhldzvo7HMLMYJInb5Le4QHgOIE/edit?usp=sharing
 
 Session 9,10,11 slides - https://docs.google.com/presentation/d/1dkmgTxAjjyvIYlQzNPYGNjJYBAZ3jG5cZxks2yVKiVk/edit#slide=id.gf529771a5a_0_237
+
+
+Graphql Slides link - https://docs.google.com/presentation/d/1V9ba3CUEpe8w2TSB_CnpB0QiEqwcFnZ4cIA1kWkfLv0/edit?usp=sharing
