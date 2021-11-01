@@ -18,3 +18,5 @@ Session 9,10,11 slides - https://docs.google.com/presentation/d/1dkmgTxAjjyvIYlQ
 
 
 Graphql Slides link - https://docs.google.com/presentation/d/1V9ba3CUEpe8w2TSB_CnpB0QiEqwcFnZ4cIA1kWkfLv0/edit?usp=sharing
+
+JS, React interview cheat sheet - https://docs.google.com/document/d/1ErUSxGA8ltwLmiIX3x4xZbCv2dYWSFwJ4Gq9a643lhE/edit?usp=sharing
