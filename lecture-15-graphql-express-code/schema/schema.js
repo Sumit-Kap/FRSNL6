@@ -118,6 +118,7 @@ const mutation = new GraphQLObjectType({
         id: { type: GraphQLInt },
       },
       resolve(parentValue, { id }) {
+        console.log("print id", id);
         return axios
           .delete(`http://localhost:3000/users/${id}`)
           .then((response) => response.data);
